@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')   
 project_name = 'portfolio_project_one'
 
 list_of_files = [
-    ".github/workflows/.gitkeep",
+    ".github/workflows/.gitkeep",    # .github we need for our CI/CD pipelines
     f"src/{project_name}/__init__.py",
     f"src/{project_name}/components/__init__.py",
     f"src/{project_name}/utils/__init__.py",
