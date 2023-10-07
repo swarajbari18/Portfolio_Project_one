@@ -1,7 +1,7 @@
 from portfolio_project_one.constants import *
 from portfolio_project_one.utils.common import read_yaml, create_directories
 
-from portfolio_project_one.entity.config_entity import DataIngestionConfig
+from portfolio_project_one.entity.config_entity import DataIngestionConfig, DataValidationConfig
 
 
 
@@ -35,3 +35,18 @@ class ConfigurationManager:
         )
 
         return data_ingestion_configuration
+    
+    def get_data_validated_config(self) -> DataValidationConfig:                    # only copy this function to Configuration Manager# kyuki upar ka function toh same hi hai
+        config = self.config.data_validation                                        # kyuki upar ka function toh same hi ha
+        schema = self.schema.COLUMNS
+
+        create_directories([config.root_dir])
+
+        data_validation_config = DataValidationConfig(
+            root_dir = config.root_dir,
+            STATUS_FILE = config.STATUS_FILE,
+            unzipped_data_dir = config.unzipped_data_dir,
+            all_schema = schema
+        )
+
+        return data_validation_config

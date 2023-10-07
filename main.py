@@ -7,5 +7,7 @@ from portfolio_project_one import logger
 logger.info("WELCOME TO OUR CUSTOM PROJECT")
 
 from portfolio_project_one.pipeline.step1_data_ingestion import run_data_ingestion
+from portfolio_project_one.pipeline.step2_data_validation import run_data_validation
 
 run_data_ingestion()  # run data ingestion pipeline
+run_data_validation()
