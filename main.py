@@ -5,3 +5,7 @@ from portfolio_project_one import logger
 # and ran -e . in our requirements.txt
 
 logger.info("WELCOME TO OUR CUSTOM PROJECT")
+
+from portfolio_project_one.pipeline.step1_data_ingestion import run_data_ingestion
+
+run_data_ingestion()  # run data ingestion pipeline
