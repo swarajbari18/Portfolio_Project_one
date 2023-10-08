@@ -10,10 +10,10 @@ class DataTransformtion:
         self.config = config
 
     
-    def train_test_split(self, random_state=None, test_size=0.2):
+    def train_test_split(self):
         df = pd.read_csv(self.config.data_path)
         # print(df)
-        train_set, test_set = train_test_split(df,test_size= test_size, random_state=random_state)
+        train_set, test_set = train_test_split(df,test_size= self.config.test_size, random_state= self.config.random_state)
         train_set.to_csv(os.path.join(self.config.root_dir, 'train.csv'), index = False)
         test_set.to_csv(os.path.join(self.config.root_dir, 'test.csv'), index = False)
 

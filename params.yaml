@@ -1,1 +1,11 @@
-key: val
+# key: val  ## we need to keep this while we have not updated it, as it cannot be empty
+
+
+data_transformation:
+  test_size: 0.2
+  random_state: null      # when read in an python environment, null is interpreted as None
+
+
+ElasticNet:               # ElasticNet is a ML model I am using
+  alpha: 0.5
+  l1_ratio: 0.7
