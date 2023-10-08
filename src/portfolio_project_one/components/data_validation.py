@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 from portfolio_project_one import logger
-from portfolio_project_one.config.configuration import DataValidationConfig
+from portfolio_project_one.entity.config_entity import DataValidationConfig
 
 
 
@@ -30,7 +30,7 @@ class DataValidation:
                     #  this means we should not go ahead
                     with open(self.config.STATUS_FILE, 'w') as f:
                         f.write(f'''******{column}******* is an anmoly, its not in schema.yaml, deal with this first then run pipeline again
-                                    VALIDATION STATUS:  {validation_status}.''')
+                                    VALIDATION STATUS:  {validation_status}''')
 
                         logger.info(f'Validation has failed for column : {column}, Check svhema.yaml, Status File and DataFrame.')
                     break   # break the loop so that we dont go ahead and end up getting a pass status at the end
@@ -38,14 +38,14 @@ class DataValidation:
                 elif str(df[column].dtype) == all_schema[column]:       # after or we check for datatype(personal code)
                     validation_status = True                           # column exists and datatype is satisfied
                     with open(self.config.STATUS_FILE, 'w') as f:
-                        f.write(f'''VALIDATION STATUS:  {validation_status}.''')
+                        f.write(f'''VALIDATION STATUS:  {validation_status}''')
                     logger.info(f'Validation is Succesfull')
 
                 else:
                     validation_status = False
                     with open(self.config.STATUS_FILE, 'w') as f:
                         f.write(f'''******{column}******* is an anmoly, its datatype is a mismatch, deal with this first then run pipeline again
-                                    VALIDATION STATUS:  {validation_status}.''')
+                                    VALIDATION STATUS:  {validation_status}''')
 
                         logger.info(f'Validation has failed for column : {column}, Check schema.yaml, Status File and DataFrame.')
                     break
