@@ -48,7 +48,13 @@ wine based on the features given
          
         git clone https://github.com/swarajbari18/Portfolio_Project_one.git
 
+##### While working to push my code to the github repo the commands required are:
 
+```cmd
+git add .
+git commit -m "Message of your choice"
+git push origin main
+```
 ## Step 3 -- Create folder structure, so that we can easily go about the project
 
 I created a folders first hand because I wanted to have a sort of blueprint of what I wanted to do
