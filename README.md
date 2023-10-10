@@ -121,7 +121,7 @@ docker build -t swarajbaris-app:version1
 
 ## Step 9 -- Run the container
 ```cmd
-docker run -d -p 5000:8000 --name runwineapp winequality-app:version1
+docker run -d -p 5000:8000 --name runwineapp swarajbaris-app:version1
 ```
 
 ## Step 10 -- Open the WebApp in the browser
